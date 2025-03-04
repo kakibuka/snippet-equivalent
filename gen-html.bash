@@ -3,14 +3,14 @@ set -x
 
 PROJECT_ROOT=$(dirname $(realpath ${BASH_SOURCE[0]}))
 
-if [ ! -e ${PROJECT_ROOT}/doc ]; then
-  mkdir ${PROJECT_ROOT}/doc
+if [ ! -e ${PROJECT_ROOT}/docs ]; then
+  mkdir ${PROJECT_ROOT}/docs
 fi
 
 cd ${PROJECT_ROOT}/template
 snippets=()
 for i in ${PROJECT_ROOT}/snippets/*; do
-  src_path=${PROJECT_ROOT}/doc/$(basename $i)
+  src_path=${PROJECT_ROOT}/docs/$(basename $i)
   snippets+=$(basename $i)
   if [ ! -e $src_path ]; then
     mkdir $src_path
@@ -19,7 +19,7 @@ for i in ${PROJECT_ROOT}/snippets/*; do
 done
 
 echo $snippets
-cat <<data | mustache - ${PROJECT_ROOT}/template/index.mustache > ${PROJECT_ROOT}/doc/index.html
+cat <<data | mustache - ${PROJECT_ROOT}/template/index.mustache > ${PROJECT_ROOT}/docs/index.html
 ---
 snippets:
 $(for i in $snippets; do echo "  - $i"; done)
