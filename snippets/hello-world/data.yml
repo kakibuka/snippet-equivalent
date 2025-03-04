@@ -1,0 +1,16 @@
+---
+snippetsTitle: Hello, World
+snippets:
+  - data:
+      title: JavaScript (expects browser)
+      languageKey: ts
+    file:
+      src: ./hello-world.js
+      description: js-desc.txt
+  - data:
+      title: Java
+      languageKey: java
+    file:
+      src: ./hello-world.java
+      description: ./java-desc.txt
+---
