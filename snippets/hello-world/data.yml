@@ -13,4 +13,16 @@ snippets:
     file:
       src: ./hello-world.java
       description: ./java-desc.txt
+  - data:
+      title: Scala
+      languageKey: scala
+    file:
+      src: ./hello-world.scala
+      description: ./scala-desc.txt
+  - data:
+      title: Swift
+      languageKey: swift
+    file:
+      src: ./hello-world.swift
+      description: ./swift-desc.txt
 ---
