@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Snippet Equivalent: {{snippetsTitle}}</title>
+  <title>Snippet Equivalent: {{title}}</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
   <!-- and it's easy to individually load additional languages -->
@@ -11,7 +11,13 @@
   <script>hljs.highlightAll();</script>
 </head>
 <body>
-  <h1>{{snippetsTitle}}</h1>
+  <h1>{{title}}</h1>
+  {{#file.description}}
+    <p>{{.}}</p>
+  {{/file.description}}
+  {{#file.descriptionRaw}}
+    {{{.}}}
+  {{/file.descriptionRaw}}
   {{#snippets}}
     {{> snippet}}
   {{/snippets}}
