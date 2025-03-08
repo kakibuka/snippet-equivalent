@@ -1,0 +1,1 @@
+A snippet to measure the elapsed time of a code block.

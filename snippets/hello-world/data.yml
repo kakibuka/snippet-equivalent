@@ -1,5 +1,6 @@
 ---
-snippetsTitle: Hello, World
+title: Hello, World
+file:
 snippets:
   - data:
       title: JavaScript (expects browser)

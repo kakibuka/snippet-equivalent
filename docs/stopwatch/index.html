@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Snippet Equivalent: {{title}}</title>
+  <title>Snippet Equivalent: Stopwatch</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
   <!-- and it's easy to individually load additional languages -->
@@ -11,15 +11,30 @@
   <script>hljs.highlightAll();</script>
 </head>
 <body>
-  <h1>{{title}}</h1>
-  {{#file.description}}
-    <p>{{.}}</p>
-  {{/file.description}}
-  {{#file.descriptionRaw}}
-    <p>{{{.}}}</p>
-  {{/file.descriptionRaw}}
-  {{#snippets}}
-    {{> snippet}}
-  {{/snippets}}
+  <h1>Stopwatch</h1>
+    <p>A snippet to measure the elapsed time of a code block.</p>
+    <h2>Swift</h2>
+    <pre><code class="language-swift">func foo() {}
+
+func bar() async {
+    try? await Task.sleep(for: .seconds(1))
+}
+
+let clock = ContinuousClock();
+let elapsedTime = clock.measure {
+    foo()
+}
+let elapsedTime2 = await clock.measure {
+    await bar()
+}
+    
+print(elapsedTime)
+print(elapsedTime2)</pre></code>
+      <p>
+        Swift have a utility function on <code>Clock</code> protocol.
+To run the snippet on SwiftPlayground, 
+set <code>PlaygroundPage.current.needsIndefiniteExecution = true</code> 
+and wrap the snippet with <code>Task {}</code>.
+      </p>
 </body>
 </html>

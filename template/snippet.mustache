@@ -1,5 +1,12 @@
 <h2>{{data.title}}</h2>
 <pre><code class="language-{{data.languageKey}}">{{file.src}}</pre></code>
-<p>
-{{file.description}}
-</p>
+{{#file.description}}
+  <p>
+    {{file.description}}
+  </p>
+{{/file.description}}
+{{#file.descriptionRaw}}
+  <p>
+    {{{file.descriptionRaw}}}
+  </p>
+{{/file.descriptionRaw}}

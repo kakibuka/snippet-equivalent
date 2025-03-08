@@ -1,0 +1,12 @@
+---
+title: Stopwatch
+file:
+  description: description.txt
+snippets:
+  - data:
+      title: Swift
+      languageKey: swift
+    file:
+      src: ./stopwatch.swift
+      descriptionRaw: swift-desc.html
+---
