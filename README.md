@@ -15,6 +15,13 @@ This repository is for collection of code snippets which have the same functiona
 1. [Install Gradle](https://gradle.org/install/) for dependency management
 1. `gradle run` to run
 
+### Scala
+1. Go to `playground/scala`
+1. Install JDK
+1. [Install Scala](https://www.scala-lang.org/download/)
+1. [Install Gradle](https://gradle.org/install/) for dependency management
+1. `gradle run` to run
+
 ### Swift
 1. Install XCode
 1. Open `playground/swift/Playground.playground`
