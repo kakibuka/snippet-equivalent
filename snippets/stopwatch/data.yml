@@ -9,4 +9,10 @@ snippets:
     file:
       src: ./stopwatch.swift
       descriptionRaw: swift-desc.html
+  - data:
+      title: Java
+      languageKey: java
+    file:
+      src: ./Stopwatch.java
+      descriptionRaw: java-desc.html
 ---

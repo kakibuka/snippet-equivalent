@@ -31,10 +31,55 @@ let elapsedTime2 = await clock.measure {
 print(elapsedTime)
 print(elapsedTime2)</pre></code>
       <p>
-        Swift have a utility function on <code>Clock</code> protocol.
+Swift have a utility function on <code>Clock</code> protocol.
 To run the snippet on SwiftPlayground, 
 set <code>PlaygroundPage.current.needsIndefiniteExecution = true</code> 
 and wrap the snippet with <code>Task {}</code>.
-      </p>
+</p>
+    <h2>Java</h2>
+    <pre><code class="language-java">package com.example;
+
+import org.springframework.util.StopWatch;
+
+import java.time.Clock;
+import java.time.Duration;
+
+public class Stopwatch {
+    private static void mockTask() {
+        // Some task goes here
+    }
+
+    public static Duration naive() {
+        var clock = Clock.systemUTC();
+        var start = clock.instant();
+        mockTask();
+        var end = clock.instant();
+        return Duration.between(start, end);
+    }
+
+    public static long spring() {
+        var stopwatch = new StopWatch();
+        stopwatch.start();
+        mockTask();
+        stopwatch.stop();
+        return stopwatch.getTotalTimeMillis();
+    }
+
+    public static void main(final String args[]) {
+        var elapsed = naive();
+        var elapsed2 = spring();
+        System.out.println(elapsed.toString());
+        System.out.println(elapsed2);
+    }
+}</pre></code>
+      <p>
+To measure elapsed time in Java, compare the time of start and end like other languages.
+If you're working on Spring Framework, you can use <code>StopWatch</code> class.
+</p>
+<p>
+  <ul>
+    <li><a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/util/StopWatch.html">StopWatch (Spring Framework)</a></li>
+  </ul>
+</p>
 </body>
 </html>
